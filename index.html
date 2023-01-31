@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Color Tool</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Color Lighten/Darken</h1>
-        <label for="hex">Color (Hex)</label>
+        <h1 id="title">Color Lighten/Darken</h1>
+        <label for="hexInput">Color (Hex)</label>
         <input type="text" name="hex" id="hexInput" placeholder="#000000">
+        <p></p>
         <label for="slider" id="sliderText">0%</label>
         <input type="range" min="0"  max="100" value="0" class="slider" id="slider"
                name="slider"></input>
