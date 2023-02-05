@@ -4,7 +4,21 @@ const slider = document.getElementById('slider')
 const sliderText = document.getElementById('sliderText')
 const alteredColorEl = document.getElementById('alteredColor')
 const alteredColorText = document.getElementById('alteredColorText')
+const lightenText = document.getElementById('lighten')
+const darkenText = document.getElementById('darken')
+const toggleBtn = document.getElementById('toggleBtn')
 
+toggleBtn.addEventListener('click', ()=> {
+    if (toggleBtn.classList.contains('toggled')) {
+        toggleBtn.classList.remove('toggled')
+        lightenText.classList.remove('unselected')
+        darkenText.classList.add('unselected')
+    } else {
+        toggleBtn.classList.add('toggled')
+        lightenText.classList.add('unselected')
+        darkenText.classList.remove('unselected')
+    }
+})
 const isValidHex = (hex) => {
     if (!hex) return false;
 

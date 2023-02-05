@@ -35,3 +35,40 @@ input[type="text"] {
     height: 100px;
     width: 60%
 }
+
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    margin-top:20px;
+    margin-bottom: 20px;
+}
+
+.toggleText {
+    font-size: 18px;
+}
+
+.toggle-Btn {
+    height: 30px;
+    width: 60px;
+    background-color: gray;
+    border-radius: 30px;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+.inner-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    transition: all 250ms;
+}
+
+.toggle-Btn.toggled > .inner-circle {
+    transform: translateX(30px);
+    background-color: #333;
+}
+
+.unselected {
+    opacity: 0.25;
+}
