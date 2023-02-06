@@ -18,6 +18,7 @@ toggleBtn.addEventListener('click', ()=> {
         lightenText.classList.add('unselected')
         darkenText.classList.remove('unselected')
     }
+    reset();
 })
 const isValidHex = (hex) => {
     if (!hex) return false;
@@ -33,6 +34,8 @@ hexInputEl.addEventListener('keyup', (event) => {
 
     const strippedHex = hex.replace('#', '')
     inputColorEl.style.backgroundColor = "#" + hex;
+    reset();
+
 })
 
 const convertHexToRGB = (hex) => {
@@ -73,6 +76,11 @@ slider.addEventListener('input', () => {
 
     if(!isValidHex(hex)) return;
 
+
+    const valueAddition = toggleBtn.classList.contains('toggled') ?
+        -slider.value : slider.value;
+
+
     const alteredInput = alterColor(hex, percentage)
     //console.log(alteredInput)
     alteredColorEl.style.backgroundColor = alteredInput
@@ -99,5 +107,11 @@ const increaseWithinRange = (hex, amount) => {
     return newHex
 }
 
+const reset = () => {
+    slider.value = 0;
+    sliderText.textContent = `0%`;
+    alteredColorEl.style.backgroundColor = hexInputEl.value;
+    alteredColorText.textContent = `Altered Color: ${hexInputEl.value}`
+}
 //console.log(alterColor('fff', 10))
 
